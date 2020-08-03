@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7bdce72d-729e-4363-b844-e87045134f92" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../alura-design-patterns-java1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projeto/src/main/java/CalculadorDeImpostos.java" beforeDir="false" afterPath="$PROJECT_DIR$/projeto/src/main/java/CalculadorDeImpostos.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +74,7 @@
       <workItem from="1593192400187" duration="355000" />
       <workItem from="1596414755275" duration="17000" />
       <workItem from="1596414990818" duration="130000" />
-      <workItem from="1596415169591" duration="1066000" />
+      <workItem from="1596415169591" duration="1355000" />
     </task>
     <servers />
   </component>
