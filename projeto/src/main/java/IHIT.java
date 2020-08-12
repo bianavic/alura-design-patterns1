@@ -13,11 +13,11 @@ public class IHIT extends TemplateDeImpostoCondicional {
         return false;
     }
 
-    protected double maximaTaxacao(Orcamento orcamento) {
+    public double maximaTaxacao(Orcamento orcamento) {
         return orcamento.getValor() * 0.13 + 100;
     }
 
-    protected double minimaTaxacao(Orcamento orcamento) {
+    public double minimaTaxacao(Orcamento orcamento) {
         return orcamento.getValor() * (0.01 * orcamento.getItens().size());
     }
 }
