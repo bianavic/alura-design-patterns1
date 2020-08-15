@@ -6,7 +6,6 @@ public class NotaFiscalBuilder {
 
     private String razaoSocial;
     private String cnpj;
-
     private List<ItemDaNota> todosItens = new ArrayList<ItemDaNota>();
     private double valorBruto;
     private double impostos;
@@ -39,6 +38,11 @@ public class NotaFiscalBuilder {
 
     public NotaFiscalBuilder naDataAtual() {
         this.data = Calendar.getInstance();
+        return this;
+    }
+
+    public NotaFiscalBuilder naData(Calendar novaData) {
+        this.data = novaData;
         return this;
     }
 

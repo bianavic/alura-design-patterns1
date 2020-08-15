@@ -13,6 +13,7 @@ public class TesteDaNotaFiscal {
         // ...
 
         NotaFiscal nf = builder.constroi();
+        //ItemDaNota in = builder.constroi();
 
         System.out.println(nf.getValorBruto());
     }
