@@ -1,8 +1,16 @@
 // separar responsabilidades em outras classes
 public class EmAprovacao implements EstadoDeUmOrcamento {
 
+    private boolean descontoAplicado = false;
     public void aplicaDescontoExtra(Orcamento orcamento) {
         orcamento.valor -= orcamento.valor * 0.05;
+        if(!descontoAplicado) {
+            orcamento.valor -= orcamento.valor * 0.05;
+            descontoAplicado = true;
+        }
+        else {
+            throw new RuntimeException("Desconto já aplicado!");
+        }
     }
 
     // implementar TRANSICAO de estados
