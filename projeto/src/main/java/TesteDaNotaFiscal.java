@@ -1,20 +1,19 @@
-import java.util.Arrays;
-import java.util.Calendar;
-import java.util.List;
-
 public class TesteDaNotaFiscal {
 
     public static void main(String[] args) {
 
-        List<ItemDaNota> itens = Arrays.asList(new ItemDaNota("item 1", 200.0), new ItemDaNota("item 2", 400.0));
+        NotaFiscalBuilder builder = new NotaFiscalBuilder();
+        builder.paraEmpresa("Fabi Ltda")
+        .comCnpj("12.345.678/0001-12")
+        .comItem(new ItemDaNota("item 1", 200.0))
+        .comItem(new ItemDaNota("item 2", 300.0))
+        .comItem(new ItemDaNota("item 3", 400.0))
+        .comObservacoes("observacoes")
+        .naDataAtual();
+        // ...
 
-        double valorTotal = 0;
-        for (ItemDaNota item : itens) {
-            valorTotal += item.getValor();
-        }
+        NotaFiscal nf = builder.constroi();
 
-        double impostos = valorTotal * 0.05;
-
-        NotaFiscal nf = new NotaFiscal("razao social", "cnpj", Calendar.getInstance(), valorTotal, impostos, itens, "obs qualquer");
+        System.out.println(nf.getValorBruto());
     }
 }
