@@ -46,7 +46,15 @@ public class NotaFiscalBuilder {
         return this;
     }
 
+    // ALTO ACOPLAMENTO
     public NotaFiscal constroi() {
-        return new NotaFiscal(razaoSocial, cnpj, data, valorBruto, impostos, todosItens, observacoes);
+        NotaFiscal nf = new NotaFiscal(razaoSocial, cnpj, data, valorBruto, impostos, todosItens, observacoes);
+
+        new EnviadorDeEmail().enviaEmail(nf);
+        new NotaFiscalDao().salvaNoBanco(nf);
+        new EnviadorDeSms().enviaPorSms(nf);
+        new Impressora().imprime(nf);
+
+        return nf;
     }
 }
