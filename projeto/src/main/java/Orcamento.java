@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Orcamento {
 
-    private double valor;
+    protected double valor;
     private final List<Item> itens;
 
     private int estadoAtual;
