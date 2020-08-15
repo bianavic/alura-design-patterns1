@@ -7,15 +7,13 @@ public class Orcamento {
     protected double valor;
     private final List<Item> itens;
 
-    private int estadoAtual;
-    // criar constante
-    public static final int EM_APROVACAO = 1;
-    public static final int APROVADO = 2;
-    // ...
+    protected EstadoDeUmOrcamento estadoAtual;
 
     public Orcamento(double valor) {
         this.valor = valor;
         itens = new ArrayList<Item>();
+        // definir o estado inicial, todo orcamento inicia em aprovacao
+        estadoAtual = new EmAprovacao();
     }
 
     public double getValor() {
@@ -31,14 +29,21 @@ public class Orcamento {
     }
 
     public void aplicaDescontoExtra() {
+        estadoAtual.aplicaDescontoExtra(this);
 
-        // COMO representar um estado = ORCAMENTO ESTA EM APROVACAO = no objeto?
-        // if (ORCAMENTO ESTA EM APROVACAO) valor = valor - (valor * 0.05);
-        // if (estadoAtual == EM_APROVACAO) valor = valor - (valor * 0.05);
+    }
 
-        if (estadoAtual == EM_APROVACAO) valor = valor - (valor * 0.05);
-        else if (estadoAtual == APROVADO) valor = valor - (valor * 0.02);
-        else throw new RuntimeException("Somente orcamento em aprovacao ou aprovados recebem desconto extra");
+    // é o estado que conhece a proxima transicao
+    // criamos o metodo que repassa para o estado atual/corrente do objeto
+    public void aprova() {
+        estadoAtual.aprova(this);
+    }
 
+    public void reprova() {
+        estadoAtual.reprova(this);
+    }
+
+    public void finaliza() {
+        estadoAtual.finaliza(this);
     }
 }
