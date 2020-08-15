@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 public class Aprovado implements EstadoDeUmOrcamento{
 
     private boolean descontoAplicado = false;
@@ -22,5 +23,11 @@ public class Aprovado implements EstadoDeUmOrcamento{
     // orcamento aprovado pode ser finalizado
     public void finaliza(Orcamento orcamento) {
         orcamento.estadoAtual = new Finalizado();
+=======
+public class Aprovado {
+
+    public void aplicaDescontoExtra(Orcamento orcamento) {
+        orcamento.valor -= orcamento.valor * 0.02;
+>>>>>>> 1ae39516013dc73d3c4dc9ffd5479082b9b37f54
     }
 }
