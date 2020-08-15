@@ -1,6 +1,6 @@
-public class EnviadorDeEmail {
+public class EnviadorDeEmail implements AcaoAposGerarNota{
 
-    public void enviaEmail(NotaFiscal nf) {
+    public void executa(NotaFiscal nf) {
         System.out.println("envia por email");
     }
 }

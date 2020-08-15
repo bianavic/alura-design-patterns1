@@ -1,6 +1,6 @@
-public class Impressora {
+public class Impressora implements AcaoAposGerarNota{
 
-    public void imprime(NotaFiscal nf) {
+    public void executa(NotaFiscal nf) {
         System.out.println("imprime");
     }
 }

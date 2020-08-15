@@ -1,6 +1,6 @@
-public class NotaFiscalDao {
+public class NotaFiscalDao implements AcaoAposGerarNota{
 
-    public void salvaNoBanco(NotaFiscal nf) {
+    public void executa(NotaFiscal nf) {
         System.out.println("salva no banco");
     }
 }
